@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For Lathika Sri ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: radial-gradient(circle, #2b0033, #000);
+      color: white;
+      font-family: "Segoe UI", sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 80px;
+      font-size: 45px;
+      color: #ffb6d9;
+      text-shadow: 0 0 20px #ff1493;
+    }
+
+    #message {
+      width: 80%;
+      margin: 40px auto;
+      font-size: 26px;
+      line-height: 1.6;
+      color: #fff0f5;
+      text-shadow: 0 0 10px pink;
+    }
+
+    button {
+      padding: 15px 35px;
+      font-size: 22px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(45deg, #ff1493, #ff69b4);
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 20px #ff69b4;
+    }
+
+    .heart {
+      position: absolute;
+      color: red;
+      font-size: 25px;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-50px) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) scale(1.8);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Dear Lathika Sri ❤️</h1>
+
+  <div id="message"></div>
+
+  <button onclick="startProposal()">Click Here 💖</button>
+
+  <audio id="music" loop>
+    <source src="romantic_music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const lines = [
+      "Before I met you, every day felt ordinary...",
+      "But your smile turned simple moments into beautiful memories.",
+      "Your kindness, your laughter, and your presence became my favorite part of every day.",
+      "I don't promise a perfect life...",
+      "But I promise to respect you, support you, and stand beside you always.",
+      "When I imagine my future, I see you smiling beside me.",
+      "You are more precious than any trophy or dream I ever chased.",
+      "So today, with all my heart, I want to ask you...",
+      "Lathika Sri, will you be mine? 💍❤️"
+    ];
+
+    let index = 0;
+
+    function startProposal() {
+      document.querySelector("button").style.display = "none";
+      document.getElementById("music").play();
+      showLine();
+    }
+
+    function showLine() {
+      if (index < lines.length) {
+        document.getElementById("message").innerHTML += lines[index] + "<br><br>";
+        index++;
+        setTimeout(showLine, 2200);
+      } else {
+        document.body.innerHTML += "<h1>Will You Be Mine Forever? ❤️💍</h1>";
+      }
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    setInterval(createHeart, 250);
+  </script>
+
+</body>
+</html>
